@@ -1,5 +1,7 @@
 # poc-restify
 
+[![Build Status](https://travis-ci.org/icehofman/poc-restify.svg?branch=master)](https://travis-ci.org/icehofman/poc-restify)
+
 This project was generated using [yo restify-server generator](
 https://github.com/vsimonian/generator-restify-server) version
 0.1.1.
