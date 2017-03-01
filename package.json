@@ -15,7 +15,8 @@
     "forever": "^0.14.1",
     "json5": "^0.4.0",
     "restify": "^3.0.3",
-    "semver": "^5.3.0"
+    "semver": "^5.3.0",
+    "fluent-logger": "^2.2.0"
   },
   "devDependencies": {
     "mocha": "^2.2.5",
