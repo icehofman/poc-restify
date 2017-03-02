@@ -70,7 +70,6 @@ function run (cluster) {
   else {
     spawnWorker(logger);
   }
-
 }
 
 run();

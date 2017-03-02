@@ -7,9 +7,7 @@ var path    = require('path'),
     config  = require('config'),
     routes  = require('./routes');
 
-
 exports.createServer = createServer;
-
 
 /*
  * Set up server
