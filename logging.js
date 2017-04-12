@@ -27,33 +27,30 @@ function createLogger (settings) {
   // Create log directory if it doesnt exist
   if (!fs.existsSync(logDir)) fs.mkdirSync(logDir);
 
-  var FluentLogger = require('fluent-logger-stream');
+  //var FluentLogger = require('fluent-logger-stream');
 
-  var fluentLogger = new FluentLogger({tag: 'info', type: 'forward', host: 'localhost', port: 24224}); //in_forward
+  //var fluentLogger = new FluentLogger({tag: 'info', type: 'forward', host: 'localhost', port: 24224}); //in_forward
   
   // Log to console and log file
-  var log = bunyan.createLogger({
+ var log = bunyan.createLogger({
     name: appName,
     streams: [ 
       {
-        stream: fluentLogger,
+        stream: process.stdout,
         level: 'warn'
       },
       { 
-        stream: fluentLogger,
-        //path: logFile,
+        path: logFile,
         level: logLevel,
-        //type: 'rotating-file',
+        type: 'rotating-file',
         period: '1d'
       },
       { 
-        stream: fluentLogger,
-        //path: logErrorFile,
+        path: logErrorFile,
         level: 'error'
       }
     ],
     serializers: bunyan.stdSerializers
-    //stream: fluentLogger
   });
 
   log.info('Starting ' + appName + ', version ' + appVersion);
